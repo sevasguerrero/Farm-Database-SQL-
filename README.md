@@ -1,6 +1,7 @@
 # Farm-Database-SQL-
 Team Name: ns_21482_2
 
+
 				  
 				  
 				  
@@ -15,6 +16,11 @@ Sevastian Guerrero: https://github.com/sevasguerrero
 
 Saahil Bapat: https://github.com/saahil-bapat/farm
 
+ <p align="center"
+
+![Cow](https://media.giphy.com/media/Vp3ftHKvKpASA/giphy.gif)
+![](http://clipart-library.com/clipart/1923526.htm)
+				  
 
 # Farm Database
 
