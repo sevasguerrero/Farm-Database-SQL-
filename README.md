@@ -16,7 +16,6 @@ Sevastian Guerrero: https://github.com/sevasguerrero
 Saahil Bapat: https://github.com/saahil-bapat/farm
 
 
-
 # Farm Database
 
 The problem being modeled by the farm data model is the process of recording the use of employees, livestock, and machine resources, on a farm in order to optimize their utilization to better produce products for clients. Concerning human resources, the model contains both “Employees” and “Client” entities that track data like contact information, and role (for employees). This makes the job of reaching out to employees or clients more efficient, as all information needed for the task is consolidated. Also, related to these two entities, are the “Product” and “OrderDetails” entities. These keep track of product quality, amount, price, and specific details related to orders such as which clients/employees are connected to them. The product measurement units are specific on the type of animal being kept a record of. For meat the measure would be pounds (lbs), for eggs the count, and milk is measured in gallons. Keeping track of specific information related to the product being shipped allows for the farm to pinpoint the origin of any related problems and work with the employees or clients associated with them. 
@@ -28,12 +27,12 @@ The problem being modeled by the farm data model is the process of recording the
 ## Farm Data Model
 <p align="center"
 
-![App Screenshot](https://raw.githubusercontent.com/AmyN137/MySQL-Farm/main/Screen%20Shot%202023-03-30%20at%2010.01.21%20AM.png)>
+![App Screenshot](https://raw.githubusercontent.com/AmyN137/MySQL-Farm/main/Screen%20Shot%202023-03-30%20at%2010.01.21%20AM.png)
 
 
 ## Data Model Description
 
-Employees has a foreign key to Employees as there are multiple supervisors. Employees has a one to many relationship with employees.  Employees has a foreign key to Feeding because every employee has a role to feed. Employees therefore has a one to many relationship to Feeding. Livestock has a foreign key(livestockID) in Product because each livestock corresponds with a product made. Livestock has a 1:m relationship to Product. This occurs because only one animal can produce one product. Product, Client and Employees all have a foreign key in OrderDetails(productID, clientID, employeeID). OrderDetails would be considered an associative entity, because it holds the data for the m:m relationship. Product, Client, and employees all share the m:m relationship. Machinery is a foreign key to Machinery log as there are many machines logged in the machine log (machineID). Machinery has a many to many relationship with employees as the Machinery log is the associative entity. 
+The Employees entity has a foreign key to itself as there are multiple supervisors, an example of a recursive relationship. Employees has a one to many relationship with employees, as an employee can only be supervised by one supervisor. Employees have a many to many relationship with livestock as many employees can feed many of the livestock (including the same ones). Due to this many to many relationship an associative entity is formed called Feeding. Feeding's composite primary keys helps establish that only one employee can feed one animal at a specified date (feedDate) and time (feedTime). Livestock has its primary key (livestockID) as foreign key in Product because each livestock corresponds with the products made. Livestock has a 1:m relationship to Product. This occurs because one animal can produce many products. Product, Client, and Employees all have a foreign key in OrderDetails (productID, clientID, employeeID).Product, Client, and employees all share the m:m relationship. OrderDetails would be considered an associative entity, because there can be multiple employees that help multiple of the same clients and there can be multiple clients that buy quantities of the same product and other products in the same order. Machinery has a many to many relationship with employees as the Machinery log is the associative entity. Just as the Ordering Details entity (orderNumber), Machinery Log has a single primary key (logID), establishing that only one employee can use one machine at a specific date an time. 
 ## Data Dictionary
 
 ![App Screenshot](https://raw.githubusercontent.com/AmyN137/MySQL-Farm/main/Client.png)
