@@ -158,7 +158,7 @@ JOIN Livestock ON Feeding.livestockID = Livestock.livestockID
 JOIN Product ON Livestock.livestockID=Product.livestockID
 GROUP BY productType;
 ```
-This query informs the farm manager's of what each product is costing to maintain (feed). With this information they can begin to strategize on what product they need to focus on to reduce feeding cost 
+This query informs the farm manager's of what each product is costing to maintain (feed). With this information they can begin to strategize on what product they need to focus on to reduce feeding cost. 
 
 
 
